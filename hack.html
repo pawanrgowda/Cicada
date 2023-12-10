@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge Series</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            background-image: url('https://images.academicinfluence.com/res/w_800,h_450,c_pad,f_auto,q_auto/v1690571464571/controversial-topic_hacking');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Arial', sans-serif;
+            color: white;
+        }
+
+        .dialog {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, 0.8); 
+            padding: 20px;
+            border-radius: 10px;
+            z-index: 9999;
+            text-align: center;
+        }
+
+        h1, h2 {
+            margin: 0;
+            padding: 10px;
+        }
+
+        h1 {
+            background-color: #292929; 
+            border-radius: 5px;
+        }
+
+        .button {
+            background-color: #292929;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        #newImage {
+            display: none;
+            width: 50%;
+            height: 100%;
+            margin-top: 20px;
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var welcomeDialog = document.createElement('div');
+            welcomeDialog.className = 'dialog';
+            welcomeDialog.innerHTML = `
+                <h1>Welcome to Crack Cicada</h1>
+                <h2>
+                    By clicking on "Agree," you are agreeing to the confidentiality 
+                    of all the information that you are about to see and hear until 
+                    the event is completed. The login credentials given to you must 
+                    not be shared with anyone; if done so, you will be disqualified 
+                    and banned. At any point in the event, you must not share your 
+                    progress or any information about the event and your part in 
+                    this event with anyone. Good luck.
+                </h2>
+                <button onclick="closeDialog()" class="button">Agree</button>
+            `;
+            document.body.appendChild(welcomeDialog);
+
+            window.closeDialog = function () {
+                document.body.removeChild(welcomeDialog);
+                var newImage = document.getElementById('newImage');
+                newImage.style.display = 'block';
+            };
+        });
+    </script>
+</head>
+<body>
+    <img id="newImage" src="./exifid.jpg" alt="New Image">
+</body>
+</html>
