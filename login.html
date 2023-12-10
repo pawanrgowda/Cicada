@@ -12,7 +12,7 @@
             justify-content: center;
             height: 100vh;
             margin: 0;
-            background-image: url('https://securitytoday.com/-/media/SEC/Security-Products/Images/2019/09/IPAddress.jpg'); /* Replace with your background image URL */
+            background-image: url('https://securitytoday.com/-/media/SEC/Security-Products/Images/2019/09/IPAddress.jpg'); 
             background-size: cover;
             background-position: center;
         }
@@ -23,10 +23,10 @@
             border: 1px solid #ccc;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
             text-align: center;
-            background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+            background-color: rgba(255, 255, 255, 0.9); 
             border-radius: 10px;
-            animation: fadeIn 1s ease-in-out; /* Fade-in animation */
-            position: relative; /* Add position: relative to the parent */
+            animation: fadeIn 1s ease-in-out; 
+            position: relative; 
         }
 
         input {
@@ -40,7 +40,7 @@
 
         #eye-icon {
             position: absolute;
-            right: 10px; /* Position to the complete right */
+            right: 10px;
             top: 50%;
             transform: translateY(-50%);
             cursor: pointer;
@@ -56,18 +56,18 @@
 
         button {
             width: calc(100% - 20px);
-            background-color: #4CAF50; /* Green */
+            background-color: #4CAF50;
             color: white;
             padding: 10px 15px;
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            transition: background-color 0.3s ease-in-out; /* Smooth color transition */
+            transition: background-color 0.3s ease-in-out; 
             box-sizing: border-box;
         }
 
         button:hover {
-            background-color: #45a049; /* Darker green on hover */
+            background-color: #45a049; 
         }
 
         .logo {
@@ -86,7 +86,7 @@
 <body>
 
 <div id="login-box">
-    <img src="cicada_gform.png" alt="Logo" class="logo"> <!-- Replace with your logo URL -->
+    <img src="cicada_gform.png" alt="Logo" class="logo"> 
     <h2 style="color: #333;">CRACK CICADA</h2>
     <input type="text" id="token" placeholder="Token Number">
     <div style="position: relative;">
@@ -100,7 +100,7 @@
 </div>
 
 <script>
-    const sheetDBApiEndpoint = 'https://sheetdb.io/api/v1/3758il769pi1x'; // Replace with your actual SheetDB API endpoint
+    const sheetDBApiEndpoint = 'https://sheetdb.io/api/v1/3758il769pi1x';
 
     function togglePasswordVisibility() {
         const passwordField = document.getElementById('password');
@@ -111,18 +111,16 @@
         const token = document.getElementById('token').value;
         const password = document.getElementById('password').value;
 
-        // Reset error and welcome messages
         document.getElementById('error-message').innerText = '';
         document.getElementById('welcome-message').innerText = '';
 
-        // Call SheetDB API to verify credentials
         fetch(`${sheetDBApiEndpoint}/search?token=${token}&generatedPassword=${password}`)
             .then(response => response.json())
             .then(data => {
-                console.log('API Response:', data); // Log the response for debugging
+                console.log('API Response:', data);
                 if (data.length > 0) {
                     document.getElementById('welcome-message').innerText = 'Welcome to Cicada 2023';
-                    // Redirect to hack.html upon successful login
+                   
                     window.location.href = 'hack.html';
                 } else {
                     document.getElementById('error-message').innerText = 'Invalid credentials';
