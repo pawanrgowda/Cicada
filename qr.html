@@ -14,8 +14,6 @@
             font-family: Arial, sans-serif;
             background-color: #f2f2f2;
         }
-
-        /* Styles for the overlay */
         .overlay {
             display: none;
             position: fixed;
@@ -28,7 +26,6 @@
             align-items: center;
         }
 
-        /* Styles for the popup box */
         .popup {
             background-color: #fff;
             padding: 15px;
@@ -75,7 +72,7 @@
 </head>
 <body>
 
-<!-- The overlay and popup container -->
+
 <div class="overlay" id="overlay">
     <div class="popup">
         <p>Direct message "The Code" to @cicada2k23 <img class="instagram-logo" src="instagram-logo.png" alt="Instagram Logo"></p>
@@ -89,19 +86,18 @@
 </footer>
 
 <script>
-    // Function to show the popup
+
     function openPopup() {
         document.getElementById('overlay').style.display = 'flex';
     }
 
-    // Function to close the popup and show additional messages
+
     function closePopup() {
         document.getElementById('overlay').style.display = 'none';
         document.getElementById('message1').style.display = 'block';
         document.getElementById('message2').style.display = 'block';
     }
 
-    // Show the popup when the page is loaded (you can remove this if you want to trigger it with a button or other event)
     window.onload = openPopup;
 </script>
 
